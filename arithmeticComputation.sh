@@ -30,11 +30,25 @@ do
 	arr[i]=${VALUES[i]}
 done
 
-echo "Values of dictionary in the array:"${arr[@]}
+# array size
+size=${#arr[@]}
 
+function sortArray() {
+	for (( i=0; i<size; i++ )) {
+		for (( j=i+1; j<size; j++ )) {
+			if [ ${arr[i]} -lt ${arr[j]} ]
+			then
+				temp=${arr[i]}
+				arr[i]=${arr[j]}
+				arr[j]=$temp
+			fi
+		}
+	}
+	echo ${arr[@]}
+}
 
-
-
+# invoking the function to sort the array in descending order
+sortArray ${arr[@]}
 
 
 
