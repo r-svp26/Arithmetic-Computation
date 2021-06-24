@@ -17,4 +17,26 @@ result[n]=$result2
 result[o]=$result3
 result[p]=$result4
 
-echo ${result[@]}
+VALUES=()
+count=0
+for DATA in "${result[@]}";
+do
+        VALUES+=("${DATA##*:}")
+	let count++
+done
+
+for(( i=0;i<count; i++ ))
+do
+	arr[i]=${VALUES[i]}
+done
+
+echo "Values of dictionary in the array:"${arr[@]}
+
+
+
+
+
+
+
+
+
