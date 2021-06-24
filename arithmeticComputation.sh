@@ -36,7 +36,7 @@ size=${#arr[@]}
 function sortArray() {
 	for (( i=0; i<size; i++ )) {
 		for (( j=i+1; j<size; j++ )) {
-			if [ ${arr[i]} -lt ${arr[j]} ]
+			if [ ${arr[i]} -gt ${arr[j]} ]
 			then
 				temp=${arr[i]}
 				arr[i]=${arr[j]}
@@ -47,7 +47,7 @@ function sortArray() {
 	echo ${arr[@]}
 }
 
-# invoking the function to sort the array in descending order
+# invoking the function to sort the array in ascending order
 sortArray ${arr[@]}
 
 
